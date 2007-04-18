@@ -1,6 +1,6 @@
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.2.13
+Version:	0.3.27
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
@@ -37,10 +37,10 @@ install src/%{name} %{buildroot}%{_bindir}
 install %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 install src/*.qm %{buildroot}%{_datadir}/%{name}/translations
 install src/*.conf %{buildroot}%{_datadir}/%{name}
-install src/icons/smplayer_icon16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
-install src/icons/smplayer_icon22.png %{buildroot}%{_iconsdir}/hicolor/22x22/apps/%{name}.png
-install src/icons/smplayer_icon32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-install src/icons/smplayer_icon64.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{name}.png
+install icons/smplayer_icon16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+install icons/smplayer_icon22.png %{buildroot}%{_iconsdir}/hicolor/22x22/apps/%{name}.png
+install icons/smplayer_icon32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+install icons/smplayer_icon64.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{name}.png
 
 %post
 %{update_menus}
@@ -68,5 +68,16 @@ install src/icons/smplayer_icon64.png %{buildroot}%{_iconsdir}/hicolor/64x64/app
 %{_datadir}/applications/%{name}.desktop
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
-
-
+%lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
+%lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
+%lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
+%lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
+%lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
+%lang(ka) %{_datadir}/%{name}/translations/smplayer_ka.qm
+%lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
+%lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
+%lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
+%lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
+%lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
+%lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
