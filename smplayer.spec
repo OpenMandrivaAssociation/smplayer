@@ -1,6 +1,6 @@
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.3.27
+Version:	0.3.31
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
@@ -8,7 +8,7 @@ Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 BuildRequires:	libqt-devel	>= 3.3.7
-Requires:	mplayer
+Requires:	mplayer		>= 1.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -23,7 +23,7 @@ compile in other OS.
 
 %build
 
-%make
+%make PREFIX=%prefix
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -32,11 +32,13 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,22x22,32x32,64x64}/apps
 mkdir -p %{buildroot}%{_datadir}/applications
 mkdir -p %{buildroot}%{_datadir}/%{name}/translations
+mkdir -p %{buildroot}%{_datadir}/%{name}/icons
 
 install src/%{name} %{buildroot}%{_bindir}
 install %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 install src/*.qm %{buildroot}%{_datadir}/%{name}/translations
 install src/*.conf %{buildroot}%{_datadir}/%{name}
+mv -f src/icons/* %{buildroot}%{_datadir}/%{name}/icons/
 install icons/smplayer_icon16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 install icons/smplayer_icon22.png %{buildroot}%{_iconsdir}/hicolor/22x22/apps/%{name}.png
 install icons/smplayer_icon32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
@@ -66,6 +68,7 @@ install icons/smplayer_icon64.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{
 %{_datadir}/%{name}/*.conf
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}/icons/*
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
