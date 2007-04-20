@@ -1,12 +1,11 @@
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
 Version:	0.3.31
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
-Source1:	%{name}.desktop
 BuildRequires:	libqt-devel	>= 3.3.7
 Requires:	mplayer		>= 1.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -23,7 +22,7 @@ compile in other OS.
 
 %build
 
-%make PREFIX=%prefix
+%make PREFIX=%_prefix
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -35,7 +34,7 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/translations
 mkdir -p %{buildroot}%{_datadir}/%{name}/icons
 
 install src/%{name} %{buildroot}%{_bindir}
-install %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
+install %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 install src/*.qm %{buildroot}%{_datadir}/%{name}/translations
 install src/*.conf %{buildroot}%{_datadir}/%{name}
 mv -f src/icons/* %{buildroot}%{_datadir}/%{name}/icons/
@@ -43,6 +42,11 @@ install icons/smplayer_icon16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{
 install icons/smplayer_icon22.png %{buildroot}%{_iconsdir}/hicolor/22x22/apps/%{name}.png
 install icons/smplayer_icon32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
 install icons/smplayer_icon64.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{name}.png
+
+desktop-file-install --vendor="" \
+	--add-category="X-MandrivaLinux-Multimedia-Video" \
+	--add-only-show-in="KDE" \
+	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %post
 %{update_menus}
