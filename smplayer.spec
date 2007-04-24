@@ -1,12 +1,13 @@
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.3.36
+Version:	0.3.39
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
 BuildRequires:	libqt-devel	>= 3.3.7
+BuildRequires:	kdelibs-devel	>= 3.5.6
 Requires:	mplayer		>= 1.0-1.rc1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -22,7 +23,7 @@ compile in other OS.
 
 %build
 
-%make PREFIX=%_prefix
+%make PREFIX=%{_prefix} KDE_SUPPORT=1
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
