@@ -1,6 +1,6 @@
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.3.39
+Version:	0.3.44
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
@@ -74,6 +74,7 @@ desktop-file-install --vendor="" \
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/icons/*
+%lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
 %lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
