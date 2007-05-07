@@ -1,11 +1,14 @@
+%define sthemes %{name}-themes-0.1
+
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.4.7
+Version:	0.4.13
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
+Source1:	http://smplayer.sourceforge.net/linux/download/%{sthemes}.tar.bz2
 BuildRequires:	libqt-devel	>= 3.3.7
 BuildRequires:	kdelibs-devel	>= 3.5.6
 Requires:	mplayer		>= 1.0-1.rc1
@@ -19,7 +22,7 @@ Qt toolkit. It works both in windows and linux, and it could be
 compile in other OS.
 
 %prep
-%setup -q
+%setup -q -a 1
 
 %build
 
@@ -33,12 +36,15 @@ mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,22x22,32x32,64x64}/apps
 mkdir -p %{buildroot}%{_datadir}/applications
 mkdir -p %{buildroot}%{_datadir}/%{name}/translations
 mkdir -p %{buildroot}%{_datadir}/%{name}/icons
+mkdir -p %{buildroot}%{_datadir}/%{name}/themes
+mkdir -p %{buildroot}%{_datadir}/%{name}/shortcuts
 
 install src/%{name} %{buildroot}%{_bindir}
 install %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 install src/*.qm %{buildroot}%{_datadir}/%{name}/translations
 install src/*.conf %{buildroot}%{_datadir}/%{name}
-mv -f src/icons/* %{buildroot}%{_datadir}/%{name}/icons/
+mv -f %{sthemes}/themes/* %{buildroot}%{_datadir}/%{name}/themes
+mv -f src/shortcuts/* %{buildroot}%{_datadir}/%{name}/shortcuts
 install icons/smplayer_icon16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 install icons/smplayer_icon22.png %{buildroot}%{_iconsdir}/hicolor/22x22/apps/%{name}.png
 install icons/smplayer_icon32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
@@ -69,11 +75,16 @@ desktop-file-install --vendor="" \
 %files
 %defattr(644,root,root,755)
 %doc Changelog *.txt
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/themes
+%dir %{_datadir}/%{name}/shortcuts
+%dir %{_datadir}/%{name}/translations
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}/*.conf
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/icons/*
+%{_datadir}/%{name}/themes/*
+%{_datadir}/%{name}/shortcuts/*
 %lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
 %lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
@@ -89,5 +100,6 @@ desktop-file-install --vendor="" \
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
