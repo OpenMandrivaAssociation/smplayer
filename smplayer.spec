@@ -2,14 +2,13 @@
 
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.4.16
+Version:	0.4.18
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
 Source1:	http://smplayer.sourceforge.net/linux/download/%{sthemes}.tar.bz2
-BuildRequires:	libqt-devel	>= 3.3.7
 BuildRequires:	kdelibs-devel	>= 3.5.6
 Requires:	mplayer		>= 1.0-1.rc1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -100,6 +99,7 @@ desktop-file-install --vendor="" \
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
