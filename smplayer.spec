@@ -2,7 +2,7 @@
 
 Summary:	SMplayer is a new front-end for mplayer
 Name:		smplayer
-Version:	0.4.22
+Version:	0.4.23
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
@@ -40,7 +40,7 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/shortcuts
 
 install src/%{name} %{buildroot}%{_bindir}
 install %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
-install src/*.qm %{buildroot}%{_datadir}/%{name}/translations
+install src/translations/*.qm %{buildroot}%{_datadir}/%{name}/translations
 install src/*.conf %{buildroot}%{_datadir}/%{name}
 mv -f %{sthemes}/themes/* %{buildroot}%{_datadir}/%{name}/themes
 mv -f src/shortcuts/* %{buildroot}%{_datadir}/%{name}/shortcuts
