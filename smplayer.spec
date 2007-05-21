@@ -28,7 +28,7 @@ compile in other OS.
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%makeinstall_std PREFIX=%{buildroot}%{_prefix}
+%makeinstall_std PREFIX=%{_prefix}
 
 desktop-file-install --vendor="" \
 	--add-category="X-MandrivaLinux-Multimedia-Video" \
