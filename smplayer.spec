@@ -1,29 +1,54 @@
-Summary:	SMplayer is a new front-end for mplayer
+Summary:	SMPlayer is a complete front-end for mplayer
 Name:		smplayer
 Version:	0.4.25
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
 BuildRequires:	kdelibs-devel	>= 3.5.7
 Requires:	mplayer		>= 1.0-1.rc1
-Requires:	%{name}-themes	>= 0.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-SMplayer is a new front-end for mplayer. It intends to be a much more 
-complete front-end than the existing ones, for instance options to manage 
-filters. SMplayer is multi-platform as it is being developed with the 
-Qt toolkit. It works both in windows and linux, and it could be 
-compile in other OS.
+SMPlayer intends to be a complete front-end for MPlayer,
+from basic features like playing videos, DVDs, and VCDs 
+to more advanced features like support for MPlayer filters and more.
+
+One of the most interesting features of SMPlayer: it remembers the 
+settings of all files you play. So you start to watch a movie but you 
+have to leave... don't worry, when you open that movie again it will 
+resume at the same point you left it, and with the same settings: 
+audio track, subtitles, volume...
+
+Other additional interesting features:
+
+* Configurable subtitles. You can choose font and size, and even colors 
+  for the subtitles.
+* Audio track switching. You can choose the audio track you want to listen. 
+  Works with avi and mkv. And of course with DVDs.
+* Seeking by mouse wheel. You can use your mouse wheel to go forward or 
+  backward in the video.
+* Video equalizer, allows you to adjust the brightness, contrast, hue, 
+  saturation and gamma of the video image.
+* Multiple speed playback. You can play at 2X, 4X... and even in slow motion.
+* Filters. Several filters are available: deinterlace, postprocessing, denoise... 
+  and even a karaoke filter (voice removal).
+* Audio and subtitles delay adjustment. Allows you to sync audio and subtitles.
+* Advanced options, such as selecting a demuxer or video & audio codecs.
+* Playlist. Allows you to enqueue several files to be played one after each other.
+  Autorepeat and shuffle supported too.
+* Preferences dialog. You can easily configure every option of SMPlayer by using 
+  a nice preferences dialog.
+
+SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
 %setup -q
 
 %build
 
-%make KDE_SUPPORT=1
+%make PREFIX=%{_prefix} KDE_SUPPORT=1
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
