@@ -1,7 +1,7 @@
 Summary:	SMPlayer is a complete front-end for mplayer
 Name:		smplayer
-Version:	0.4.25
-Release:	%mkrel 2
+Version:	0.4.27
+Release:	%mkrel 1
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
