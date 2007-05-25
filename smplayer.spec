@@ -104,6 +104,7 @@ desktop-file-install --vendor="" \
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
 %lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
