@@ -78,7 +78,6 @@ desktop-file-install --vendor="" \
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
-
 %defattr(644,root,root,755)
 %doc %{_datadir}/doc/packages/smplayer/*
 %dir %{_datadir}/%{name}
@@ -109,3 +108,4 @@ desktop-file-install --vendor="" \
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
+%lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
