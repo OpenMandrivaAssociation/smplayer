@@ -1,6 +1,6 @@
 Summary:	SMPlayer is a complete front-end for mplayer
 Name:		smplayer
-Version:	0.5.15
+Version:	0.5.19
 Release:	%mkrel 1
 License:	GPL
 Group:		Video
@@ -56,7 +56,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %makeinstall_std PREFIX=%{_prefix}
 
 desktop-file-install --vendor="" \
-	--add-category="X-MandrivaLinux-Multimedia-Video" \
 	--add-only-show-in="KDE" \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
@@ -101,6 +100,8 @@ desktop-file-install --vendor="" \
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
+%lang(pt_pt) %{_datadir}/%{name}/translations/smplayer_pt_PT.qm
+%lang(ro_RO) %{_datadir}/%{name}/translations/smplayer_ro_RO.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
 %lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
