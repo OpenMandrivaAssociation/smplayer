@@ -1,7 +1,7 @@
 Summary:	SMPlayer is a complete front-end for mplayer
 Name:		smplayer
 Version:	0.5.21
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Video
 Url:		http://smplayer.sourceforge.net/
@@ -55,8 +55,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 
 %makeinstall_std PREFIX=%{_prefix}
 
-desktop-file-install --vendor="" \
-	--add-only-show-in="KDE" \
+desktop-file-install \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %post
