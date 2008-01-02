@@ -8,6 +8,7 @@ Url:		http://smplayer.sourceforge.net/
 Source0:	http://smplayer.sourceforge.net/download/%{name}-%{version}.tar.bz2
 BuildRequires:	kdelibs-devel	>= 3.5.7
 Requires:	mplayer		>= 1.0-1.rc1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 SMPlayer intends to be a complete front-end for MPlayer,
