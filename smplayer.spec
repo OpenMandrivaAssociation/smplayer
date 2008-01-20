@@ -13,6 +13,7 @@ BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
 Conflicts:	smplayer
 Suggests:	smplayer-themes
+Obsoletes:	%{oname}-qt4
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
