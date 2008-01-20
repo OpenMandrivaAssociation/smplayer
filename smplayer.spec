@@ -1,19 +1,17 @@
-%define oname smplayer
-
 Summary:	SMPlayer is a complete front-end for mplayer written in Qt4
-Name:		smplayer-qt4
+Name:		smplayer
 Version:	0.5.62
 Release:	%mkrel 2
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
-Source0:	http://smplayer.sourceforge.net/porting/%{oname}-%{version}.tar.bz2
+Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
 Conflicts:	smplayer
 Suggests:	smplayer-themes
-Obsoletes:	%{oname}-qt4
+Obsoletes:	smplayer-qt4
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -59,7 +57,7 @@ This is SMplayer port for QT4 toolkit, which is under heavy development right no
 Do NOT expect that everything will be working out of box.
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -qn %{name}-%{version}
 
 %build
 %make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
@@ -97,36 +95,36 @@ desktop-file-install \
 %files
 %defattr(644,root,root,755)
 %doc Changelog *.txt
-%dir %{_datadir}/%{oname}
-%dir %{_datadir}/%{oname}/shortcuts
-%dir %{_datadir}/%{oname}/translations
-%attr(755,root,root) %{_bindir}/%{oname}
-%{_datadir}/%{oname}/*.conf
-%{_iconsdir}/hicolor/*/apps/%{oname}.png
-%{_datadir}/applications/%{oname}.desktop
-%{_datadir}/%{oname}/shortcuts/*
-%{_datadir}/%{oname}/translations/qt_fr.qm
-%lang(bg) %{_datadir}/%{oname}/translations/smplayer_bg.qm
-%lang(cs) %{_datadir}/%{oname}/translations/smplayer_cs.qm
-%lang(de) %{_datadir}/%{oname}/translations/smplayer_de.qm
-%lang(el_GR) %{_datadir}/%{oname}/translations/smplayer_el_GR.qm
-%lang(en_US) %{_datadir}/%{oname}/translations/smplayer_en_US.qm
-%lang(es) %{_datadir}/%{oname}/translations/smplayer_es.qm
-%lang(fr) %{_datadir}/%{oname}/translations/smplayer_fr.qm
-%lang(hu) %{_datadir}/%{oname}/translations/smplayer_hu.qm
-%lang(it) %{_datadir}/%{oname}/translations/smplayer_it.qm
-%lang(ja) %{_datadir}/%{oname}/translations/smplayer_ja.qm
-%lang(ka) %{_datadir}/%{oname}/translations/smplayer_ka.qm
-%lang(nl) %{_datadir}/%{oname}/translations/smplayer_nl.qm
-%lang(pl) %{_datadir}/%{oname}/translations/smplayer_pl.qm
-%lang(pt_BR) %{_datadir}/%{oname}/translations/smplayer_pt_BR.qm
-%lang(pt_pt) %{_datadir}/%{oname}/translations/smplayer_pt_PT.qm
-%lang(ro_RO) %{_datadir}/%{oname}/translations/smplayer_ro_RO.qm
-%lang(ru_RU) %{_datadir}/%{oname}/translations/smplayer_ru_RU.qm
-%lang(sk) %{_datadir}/%{oname}/translations/smplayer_sk.qm
-%lang(sr) %{_datadir}/%{oname}/translations/smplayer_sr.qm
-%lang(sv) %{_datadir}/%{oname}/translations/smplayer_sv.qm
-%lang(tr) %{_datadir}/%{oname}/translations/smplayer_tr.qm
-%lang(uk_UA) %{_datadir}/%{oname}/translations/smplayer_uk_UA.qm
-%lang(zh_CN) %{_datadir}/%{oname}/translations/smplayer_zh_CN.qm
-%lang(zh_TW) %{_datadir}/%{oname}/translations/smplayer_zh_TW.qm
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/shortcuts
+%dir %{_datadir}/%{name}/translations
+%attr(755,root,root) %{_bindir}/%{name}
+%{_datadir}/%{name}/*.conf
+%{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}/shortcuts/*
+%{_datadir}/%{name}/translations/qt_fr.qm
+%lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
+%lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
+%lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
+%lang(el_GR) %{_datadir}/%{name}/translations/smplayer_el_GR.qm
+%lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
+%lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
+%lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
+%lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
+%lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
+%lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
+%lang(ka) %{_datadir}/%{name}/translations/smplayer_ka.qm
+%lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
+%lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
+%lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
+%lang(pt_pt) %{_datadir}/%{name}/translations/smplayer_pt_PT.qm
+%lang(ro_RO) %{_datadir}/%{name}/translations/smplayer_ro_RO.qm
+%lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
+%lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
+%lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
+%lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
+%lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
+%lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
+%lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
