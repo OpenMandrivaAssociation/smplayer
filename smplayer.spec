@@ -1,11 +1,12 @@
+%define betaver rc1
 Summary:	SMPlayer is a complete front-end for mplayer written in Qt4
 Name:		smplayer
-Version:	0.5.62
-Release:	%mkrel 3
+Version:	0.6.0
+Release:	%mkrel -c %betaver 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
-Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
+Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}%{betaver}.tar.bz2
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -57,7 +58,7 @@ This is SMplayer port for QT4 toolkit, which is under heavy development right no
 Do NOT expect that everything will be working out of box.
 
 %prep
-%setup -qn %{name}-%{version}
+%setup -qn %{name}-%{version}%{betaver}
 
 %build
 %make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
