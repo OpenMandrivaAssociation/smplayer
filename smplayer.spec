@@ -49,12 +49,13 @@ Other additional interesting features:
   the following languages: Bulgarian, Czech, German, Spanish, French, 
   Hungarian, Italian, Japanese, Georgian, Dutch, Polish, Brazilian Portuguese, 
   Russian, Slovak, Serbian, Swedish, Turkish, Ukrainian, Simplified-Chinese 
-  and Traditional Chinese. By the way, now it's possible to change the language 
+  and Traditional Chinese. By the way, now it's possible to change the language
   at run-time.
 				
 SMPlayer supports themes which can be found in smplayer-themes package.
 
-This is SMplayer port for QT4 toolkit, which is under heavy development right now. 
+This is SMplayer port for QT4 toolkit, which is under heavy development right
+now.
 Do NOT expect that everything will be working out of box.
 
 %prep
