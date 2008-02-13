@@ -1,4 +1,4 @@
-%define betaver rc1
+%define betaver rc2
 Summary:	SMPlayer is a complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.0
@@ -53,10 +53,6 @@ Other additional interesting features:
   at run-time.
 				
 SMPlayer supports themes which can be found in smplayer-themes package.
-
-This is SMplayer port for QT4 toolkit, which is under heavy development right
-now.
-Do NOT expect that everything will be working out of box.
 
 %prep
 %setup -qn %{name}-%{version}%{betaver}
