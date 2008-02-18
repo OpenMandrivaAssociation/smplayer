@@ -1,5 +1,5 @@
 %define betaver rc2
-Summary:	SMPlayer is a complete front-end for mplayer written in Qt4
+Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.0
 Release:	%mkrel -c %betaver 1
