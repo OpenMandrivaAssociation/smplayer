@@ -1,8 +1,9 @@
 %define betaver rc2
+
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.0
-Release:	%mkrel -c %betaver 1
+Release:	%mkrel -c %betaver 2
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
