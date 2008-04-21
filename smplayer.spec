@@ -1,4 +1,4 @@
-%define betaver rc3
+%define betaver rc4
 
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
