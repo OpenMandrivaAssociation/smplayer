@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}final.tar.bz2
+Patch0:		%{name}-0.6.0final-optflags.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -55,8 +56,11 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
 %setup -qn %{name}-%{version}final
+%patch0 -p1
 
 %build
+export OPTFLAGS="%{optflags}"
+
 %make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
 #KDE_SUPPORT=1
 
@@ -99,7 +103,7 @@ desktop-file-install \
 %{_mandir}/man1/%{name}.*
 %{_datadir}/%{name}/*.conf
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/shortcuts/*
 %lang(fr) %{_datadir}/%{name}/translations/qt_fr.qm
 %lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
