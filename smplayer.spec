@@ -1,13 +1,11 @@
-%define betaver rc4
-
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.0
-Release:	%mkrel -c %betaver 1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
-Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}%{betaver}.tar.bz2
+Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}final.tar.bz2
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -56,7 +54,7 @@ Other additional interesting features:
 SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
-%setup -qn %{name}-%{version}%{betaver}
+%setup -qn %{name}-%{version}final
 
 %build
 %make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
