@@ -128,6 +128,7 @@ desktop-file-install \
 %lang(ro_RO) %{_datadir}/%{name}/translations/smplayer_ro_RO.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
+%lang(sl) %{_datadir}/%{name}/translations/smplayer_sl_SI.qm
 %lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
 %lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
