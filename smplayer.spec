@@ -104,7 +104,7 @@ desktop-file-install \
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/shortcuts/*
-%lang(fr) %{_datadir}/%{name}/translations/qt_fr.qm
+%lang(ar_SY) %{_datadir}/%{name}/translations/smplayer_ar_SY.qm
 %lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
 %lang(ca) %{_datadir}/%{name}/translations/smplayer_ca.qm
 %lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
@@ -114,12 +114,14 @@ desktop-file-install \
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
 %lang(eu) %{_datadir}/%{name}/translations/smplayer_eu.qm
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
+%lang(fr) %{_datadir}/%{name}/translations/qt_fr.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
 %lang(ka) %{_datadir}/%{name}/translations/smplayer_ka.qm
 %lang(ko) %{_datadir}/%{name}/translations/smplayer_ko.qm
+%lang(ku) %{_datadir}/%{name}/translations/smplayer_ku.qm
 %lang(mk) %{_datadir}/%{name}/translations/smplayer_mk.qm
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
