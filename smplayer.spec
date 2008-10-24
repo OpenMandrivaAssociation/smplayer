@@ -114,8 +114,8 @@ desktop-file-install \
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
 %lang(eu) %{_datadir}/%{name}/translations/smplayer_eu.qm
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
-%lang(fr) %{_datadir}/%{name}/translations/qt_fr.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
+%lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
