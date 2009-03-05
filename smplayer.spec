@@ -1,12 +1,13 @@
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.0final-optflags.patch
+Patch1:		%{name}-0.6.6-fix-translations.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -51,12 +52,13 @@ Other additional interesting features:
   Russian, Slovak, Serbian, Swedish, Turkish, Ukrainian, Simplified-Chinese 
   and Traditional Chinese. By the way, now it's possible to change the language
   at run-time.
-				
+
 SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
 %setup -qn %{name}-%{version}
 %patch0 -p1
+%patch1 -p0
 
 %build
 %setup_compile_flags
