@@ -1,13 +1,13 @@
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
-Version:	0.6.6
-Release:	%mkrel 2
+Version:	0.6.7
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-0.6.0final-optflags.patch
-Patch1:		%{name}-0.6.6-fix-translations.patch
+Patch0:		%{name}-0.6.7-optflags.patch
+Patch1:		smplayer-0.6.7-fix-translations.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -117,7 +117,7 @@ desktop-file-install \
 %lang(eu) %{_datadir}/%{name}/translations/smplayer_eu.qm
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
-%lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
+#%lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
