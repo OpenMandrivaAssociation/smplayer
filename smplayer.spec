@@ -1,13 +1,14 @@
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
 Version:	0.6.7
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.7-optflags.patch
 Patch1:		smplayer-0.6.7-fix-translations.patch
+Patch2:		smplayer-0.6.7-mandriva-mplayer-version.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -59,6 +60,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %setup -qn %{name}-%{version}
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 %setup_compile_flags
