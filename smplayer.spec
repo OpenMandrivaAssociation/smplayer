@@ -1,14 +1,14 @@
 Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
-Version:	0.6.7
-Release:	%mkrel 2
+Version:	0.6.8
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-0.6.7-optflags.patch
+Patch0:		%{name}-0.6.8-optflags.patch
 Patch1:		smplayer-0.6.7-fix-translations.patch
-Patch2:		smplayer-0.6.7-mandriva-mplayer-version.patch
+Patch2:		smplayer-0.6.8-mandriva-mplayer-version.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -59,7 +59,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %prep
 %setup -qn %{name}-%{version}
 %patch0 -p1
-%patch1 -p0
+#patch1 -p0
 %patch2 -p1
 
 %build
@@ -116,10 +116,11 @@ desktop-file-install \
 %lang(el_GR) %{_datadir}/%{name}/translations/smplayer_el_GR.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
+%lang(et) %{_datadir}/%{name}/translations/smplayer_et.qm
 %lang(eu) %{_datadir}/%{name}/translations/smplayer_eu.qm
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
-#%lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
+%lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
@@ -130,7 +131,7 @@ desktop-file-install \
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
-%lang(pt_pt) %{_datadir}/%{name}/translations/smplayer_pt_PT.qm
+%lang(pt_pt) %{_datadir}/%{name}/translations/smplayer_pt.qm
 %lang(ro_RO) %{_datadir}/%{name}/translations/smplayer_ro_RO.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
@@ -139,5 +140,6 @@ desktop-file-install \
 %lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
+%lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
