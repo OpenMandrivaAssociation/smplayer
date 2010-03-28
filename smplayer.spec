@@ -7,8 +7,6 @@ Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
-Patch1:		smplayer-0.6.7-fix-translations.patch
-Patch2:		smplayer-0.6.8-mandriva-mplayer-version.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -59,12 +57,11 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %prep
 %setup -qn %{name}-%{version}
 %patch0 -p1
-#patch1 -p0
-%patch2 -p1
 
 %build
 %setup_compile_flags
 %make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
+# (tpg) don't use kde dialogs
 #KDE_SUPPORT=1
 
 %install
@@ -127,6 +124,7 @@ desktop-file-install \
 %lang(ka) %{_datadir}/%{name}/translations/smplayer_ka.qm
 %lang(ko) %{_datadir}/%{name}/translations/smplayer_ko.qm
 %lang(ku) %{_datadir}/%{name}/translations/smplayer_ku.qm
+%lang(lt) %{_datadir}/%{name}/translations/smplayer_lt.qm
 %lang(mk) %{_datadir}/%{name}/translations/smplayer_mk.qm
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
