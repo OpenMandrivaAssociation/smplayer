@@ -8,6 +8,7 @@ Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
 Patch1:		%{name}-0.6.9-ru-ts.patch
+Patch2:		%{name}-0.6.9-mdv-mime-types.patch
 BuildRequires:	qt4-devel	>= 4.2.0
 BuildRequires:	qt4-linguist	>= 4.2.0
 Requires:	mplayer		>= 1.0-1.rc1
@@ -59,6 +60,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %setup -qn %{name}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %setup_compile_flags
