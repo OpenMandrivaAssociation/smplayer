@@ -1,21 +1,20 @@
-Summary:	Complete front-end for mplayer written in Qt4
 Name:		smplayer
-Version:	0.6.9
-Release:	%mkrel 5
+Summary:	Complete front-end for mplayer written in Qt4
+Version:	0.6.10
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
-Patch1:		%{name}-0.6.9-ru-ts.patch
+Patch1:		%{name}-0.6.10-ru-ts.patch
 Patch2:		%{name}-0.6.9-mdv-mime-types.patch
-BuildRequires:	qt4-devel	>= 4.2.0
-BuildRequires:	qt4-linguist	>= 4.2.0
-Requires:	mplayer		>= 1.0-1.rc1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires:	qt4-devel >= 4.2.0
+Requires:	mplayer >= 1.0-1.rc1
 Suggests:	smplayer-themes
 Obsoletes:	smplayer-qt4 < 0.5.62-1
-Provides:	smplayer-qt4
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Provides:	smplayer-qt4 = %{version}-%{release}
 
 %description
 SMPlayer intends to be a complete front-end for MPlayer,
@@ -57,53 +56,42 @@ Other additional interesting features:
 SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
-%setup -qn %{name}-%{version}
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
 
 %build
-%setup_compile_flags
-%make PREFIX=%{_prefix} QMAKE=%{qt4bin}/qmake LRELEASE=%{qt4bin}/lrelease
 # (tpg) don't use kde dialogs
 #KDE_SUPPORT=1
+%setup_compile_flags
+%make	PREFIX=%{_prefix}			\
+	'DOC_PATH=\"%{_docdir}/%{name}\"'
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%makeinstall_std PREFIX=%{_prefix}
+%make install DESTDIR=%{buildroot}		\
+	PREFIX=%{_prefix}
 
-# remove wrongly put docs
-rm -rf %{buildroot}%{_datadir}/doc
+# Allow html docs
+%__mv %{buildroot}%{_docdir}/packages/%{name} %{buildroot}%{_docdir}/%{name}
+%__rm -fr %{buildroot}%{_docdir}/packages
 
 desktop-file-install \
 	--remove-key='Encoding' \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_desktop_database}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_desktop_database}
-%clean_icon_cache hicolor
-%endif
-
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
-%defattr(644,root,root,755)
 %doc Changelog *.txt
+%doc %{_docdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
-%attr(755,root,root) %{_bindir}/%{name}
+%{_bindir}/%{name}
 %{_mandir}/man1/%{name}.*
 %{_datadir}/%{name}/*.conf
 %{_iconsdir}/hicolor/*/apps/%{name}.png
@@ -114,6 +102,7 @@ desktop-file-install \
 %lang(ca) %{_datadir}/%{name}/translations/smplayer_ca.qm
 %lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
+%lang(da) %{_datadir}/%{name}/translations/smplayer_da.qm
 %lang(el_GR) %{_datadir}/%{name}/translations/smplayer_el_GR.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
@@ -132,8 +121,8 @@ desktop-file-install \
 %lang(mk) %{_datadir}/%{name}/translations/smplayer_mk.qm
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
+%lang(pt) %{_datadir}/%{name}/translations/smplayer_pt.qm
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
-%lang(pt_pt) %{_datadir}/%{name}/translations/smplayer_pt.qm
 %lang(ro_RO) %{_datadir}/%{name}/translations/smplayer_ro_RO.qm
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
