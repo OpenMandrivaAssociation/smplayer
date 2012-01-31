@@ -10,6 +10,7 @@ Patch0:		%{name}-0.6.8-optflags.patch
 Patch1:		%{name}-0.7.0-ru-ts.patch
 Patch2:		%{name}-0.6.9-mdv-mime-types.patch
 BuildRequires:	qt4-devel
+BuildRequires:	desktop-file-utils
 Requires:	mplayer
 Suggests:	smplayer-themes
 Obsoletes:	smplayer-qt4 < 0.5.62-1
