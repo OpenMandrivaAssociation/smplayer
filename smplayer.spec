@@ -1,17 +1,16 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.6.10
+Version:	0.7.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
-Patch1:		%{name}-0.6.10-ru-ts.patch
+Patch1:		%{name}-0.7.0-ru-ts.patch
 Patch2:		%{name}-0.6.9-mdv-mime-types.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:	qt4-devel >= 4.2.0
-Requires:	mplayer >= 1.0-1.rc1
+BuildRequires:	qt4-devel
+Requires:	mplayer
 Suggests:	smplayer-themes
 Obsoletes:	smplayer-qt4 < 0.5.62-1
 Provides:	smplayer-qt4 = %{version}-%{release}
@@ -65,14 +64,12 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 # (tpg) don't use kde dialogs
 #KDE_SUPPORT=1
 %setup_compile_flags
-%make	PREFIX=%{_prefix}			\
-	'DOC_PATH=\"%{_docdir}/%{name}\"'
+%make	PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"'
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%make install DESTDIR=%{buildroot}		\
-	PREFIX=%{_prefix}
+%makeinstall_std PREFIX=%{_prefix}
 
 # Allow html docs
 %__mv %{buildroot}%{_docdir}/packages/%{name} %{buildroot}%{_docdir}/%{name}
@@ -87,7 +84,6 @@ desktop-file-install \
 
 %files
 %doc Changelog *.txt
-%doc %{_docdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
@@ -111,6 +107,7 @@ desktop-file-install \
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
 %lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
+%lang(hr) %{_datadir}/%{name}/translations/smplayer_hr.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
