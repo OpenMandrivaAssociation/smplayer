@@ -1,13 +1,12 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.7.0
-Release:	%mkrel 1
+Version:	0.7.1
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
-Source0:	http://smplayer.sourceforge.net/porting/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
-Patch1:		%{name}-0.7.0-ru-ts.patch
 Patch2:		%{name}-0.6.9-mdv-mime-types.patch
 BuildRequires:	qt4-devel
 BuildRequires:	desktop-file-utils
@@ -58,7 +57,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 %patch2 -p1
 
 %build
@@ -68,8 +66,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %make	PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"'
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %makeinstall_std PREFIX=%{_prefix}
 
 # Allow html docs
@@ -79,9 +75,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 desktop-file-install \
 	--remove-key='Encoding' \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
 %doc Changelog *.txt
