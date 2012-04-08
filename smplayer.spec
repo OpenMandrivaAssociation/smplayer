@@ -1,13 +1,13 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.7.1
+Version:	0.8.0
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-0.6.8-optflags.patch
-Patch2:		%{name}-0.6.9-mdv-mime-types.patch
+Patch2:		%{name}-0.8.0-mdv-mime-types.patch
 BuildRequires:	qt4-devel
 BuildRequires:	desktop-file-utils
 Requires:	mplayer
