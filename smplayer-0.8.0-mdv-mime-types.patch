@@ -1,0 +1,12 @@
+diff -urN smplayer-0.8.0/smplayer.desktop smplayer-0.8.0-patched/smplayer.desktop
+--- smplayer-0.8.0/smplayer.desktop	2012-03-23 18:57:49.000000000 +1100
++++ smplayer-0.8.0-patched/smplayer.desktop	2012-04-08 20:41:24.884579665 +1100
+@@ -25,7 +25,7 @@
+ GenericName[eu]=Multimedia irakurgailua
+ GenericName[zh_CN]=媒体播放器
+ Icon=smplayer
+-MimeType=audio/ac3;audio/mp4;audio/mpeg;audio/vnd.rn-realaudio;audio/vorbis;audio/x-adpcm;audio/x-matroska;audio/x-mp2;audio/x-mp3;audio/x-ms-wma;audio/x-vorbis;audio/x-wav;audio/mpegurl;audio/x-mpegurl;audio/x-pn-realaudio;audio/x-scpls;video/avi;video/mp4;video/flv;video/mpeg;video/quicktime;video/vnd.rn-realvideo;video/x-matroska;video/x-ms-asf;video/x-msvideo;video/x-ms-wmv;video/x-ogm;video/x-theora;
++MimeType=audio/ac3;audio/mp4;audio/mpeg;audio/vnd.rn-realaudio;audio/vorbis;audio/x-adpcm;audio/x-matroska;audio/x-ms-wma;audio/x-wav;audio/mpegurl;audio/x-mpegurl;audio/x-pn-realaudio;audio/x-scpls;video/avi;video/mp4;video/x-flv;video/mpeg;video/quicktime;video/vnd.rn-realvideo;video/x-matroska;video/x-ms-asf;video/x-msvideo;video/x-ms-wmv;video/ogg;
+ Name=SMPlayer
+ Type=Application
+ X-KDE-StartupNotify=false
