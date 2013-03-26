@@ -1,13 +1,12 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.8.1
-Release:	2
+Version:	0.8.4
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-0.6.8-optflags.patch
-Patch2:		%{name}-0.8.0-mdv-mime-types.patch
+Patch0:		smplayer-0.8.4-optflags.patch
 BuildRequires:	qt4-devel
 BuildRequires:	desktop-file-utils
 Requires:	mplayer
@@ -57,7 +56,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %prep
 %setup -q
 %patch0 -p1
-%patch2 -p1
 
 %build
 # (tpg) don't use kde dialogs
@@ -85,6 +83,7 @@ desktop-file-install \
 %{_mandir}/man1/%{name}.*
 %{_datadir}/%{name}/*.conf
 %{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}.svg
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/shortcuts/*
 %lang(ar_SY) %{_datadir}/%{name}/translations/smplayer_ar_SY.qm
@@ -101,6 +100,7 @@ desktop-file-install \
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
 %lang(fr) %{_datadir}/%{name}/translations/smplayer_fr.qm
 %lang(gl) %{_datadir}/%{name}/translations/smplayer_gl.qm
+%lang(he_IL) %{_datadir}/%{name}/translations/smplayer_he_IL.qm
 %lang(hr) %{_datadir}/%{name}/translations/smplayer_hr.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
@@ -120,8 +120,11 @@ desktop-file-install \
 %lang(sl) %{_datadir}/%{name}/translations/smplayer_sl_SI.qm
 %lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
 %lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
+%lang(th) %{_datadir}/%{name}/translations/smplayer_th.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
 %lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
+
+
