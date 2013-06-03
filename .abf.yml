@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   smplayer-0.8.4.tar.bz2: a3d13db5e33a03f75b5a765e8d18f263c94edd5a
+sources:
+  smplayer-0.8.5.tar.bz2: 584c71e94971fc7e39ec5a31b75e7fdd3d107ea7

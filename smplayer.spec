@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.8.4
+Version:	0.8.5
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -126,5 +126,4 @@ desktop-file-install \
 %lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
-
-
+%lang(my_MY) %{_datadir}/%{name}/translations/smplayer_ms_MY.qm
