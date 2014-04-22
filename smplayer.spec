@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.8.5
-Release:	2
+Version:	0.8.6
+Release:	5
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
@@ -58,8 +58,6 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 %patch0 -p1
 
 %build
-# (tpg) don't use kde dialogs
-#KDE_SUPPORT=1
 %setup_compile_flags
 %make PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"'
 
@@ -126,4 +124,4 @@ desktop-file-install \
 %lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
-%lang(my_MY) %{_datadir}/%{name}/translations/smplayer_ms_MY.qm
+%lang(ms_MY) %{_datadir}/%{name}/translations/smplayer_ms_MY.qm
