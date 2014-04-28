@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt4
-Version:	0.8.6
-Release:	5
+Version:	14.3.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
@@ -84,6 +84,7 @@ desktop-file-install \
 %{_iconsdir}/hicolor/*/apps/%{name}.svg
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/shortcuts/*
+%lang(ar) %{_datadir}/%{name}/translations/smplayer_ar.qm
 %lang(ar_SY) %{_datadir}/%{name}/translations/smplayer_ar_SY.qm
 %lang(bg) %{_datadir}/%{name}/translations/smplayer_bg.qm
 %lang(ca) %{_datadir}/%{name}/translations/smplayer_ca.qm
@@ -91,6 +92,7 @@ desktop-file-install \
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
 %lang(da) %{_datadir}/%{name}/translations/smplayer_da.qm
 %lang(el_GR) %{_datadir}/%{name}/translations/smplayer_el_GR.qm
+%lang(en_GB) %{_datadir}/%{name}/translations/smplayer_en_GB.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
 %lang(et) %{_datadir}/%{name}/translations/smplayer_et.qm
@@ -101,6 +103,7 @@ desktop-file-install \
 %lang(he_IL) %{_datadir}/%{name}/translations/smplayer_he_IL.qm
 %lang(hr) %{_datadir}/%{name}/translations/smplayer_hr.qm
 %lang(hu) %{_datadir}/%{name}/translations/smplayer_hu.qm
+%lang(id) %{_datadir}/%{name}/translations/smplayer_id.qm
 %lang(it) %{_datadir}/%{name}/translations/smplayer_it.qm
 %lang(ja) %{_datadir}/%{name}/translations/smplayer_ja.qm
 %lang(ka) %{_datadir}/%{name}/translations/smplayer_ka.qm
@@ -109,6 +112,7 @@ desktop-file-install \
 %lang(lt) %{_datadir}/%{name}/translations/smplayer_lt.qm
 %lang(mk) %{_datadir}/%{name}/translations/smplayer_mk.qm
 %lang(nl) %{_datadir}/%{name}/translations/smplayer_nl.qm
+%lang(nn_NO) %{_datadir}/%{name}/translations/smplayer_nn_NO.qm
 %lang(pl) %{_datadir}/%{name}/translations/smplayer_pl.qm
 %lang(pt) %{_datadir}/%{name}/translations/smplayer_pt.qm
 %lang(pt_BR) %{_datadir}/%{name}/translations/smplayer_pt_BR.qm
@@ -121,6 +125,7 @@ desktop-file-install \
 %lang(th) %{_datadir}/%{name}/translations/smplayer_th.qm
 %lang(tr) %{_datadir}/%{name}/translations/smplayer_tr.qm
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
+%lang(uz) %{_datadir}/%{name}/translations/smplayer_uz.qm
 %lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
