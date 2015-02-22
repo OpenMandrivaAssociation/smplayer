@@ -1,21 +1,24 @@
 Name:		smplayer
-Summary:	Complete front-end for mplayer written in Qt4
-Version:	14.9.0
+Summary:	Complete front-end for mplayer written in Qt
+Version:	14.9.0.6748
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		smplayer-0.8.4-optflags.patch
-BuildRequires:	qt4-devel
+Patch1:		smplayer-14.9-default-to-mpv.patch
+BuildRequires:	qt5-devel
+BuildRequires:	qt5-linguist-tools
 BuildRequires:	desktop-file-utils
-Requires:	mplayer
+Requires:	mpv
+Suggests:	youtube-dl
 Suggests:	smplayer-themes
-Obsoletes:	smplayer-qt4 < 0.5.62-1
-Provides:	smplayer-qt4 = %{version}-%{release}
+Obsoletes:	smplayer-qt4 < %{EVRD}
+Provides:	smplayer-qt5 = %{version}-%{release}
 
 %description
-SMPlayer intends to be a complete front-end for MPlayer,
+SMPlayer intends to be a complete front-end for MPlayer and MPV,
 from basic features like playing videos, DVDs, and VCDs 
 to more advanced features like support for MPlayer filters and more.
 
@@ -27,11 +30,12 @@ audio track, subtitles, volume...
 
 Other additional interesting features:
 
-* New GUI. Now there are toolbars, the control at the bottom is different 
-  (and it changes if the window is made smaller), the icons can be changed 
-  (several icon themes are available). In fullscreen mode the floating 
-  control that appears when you move the mouse to the bottom of the screen 
-  is new too and this time the video doesn't resize when it shows.
+* New GUI. Now there are toolbars, the control at the bottom is
+  different (and it changes if the window is made smaller), the icons
+  can be changed (several icon themes are available). In fullscreen
+  mode, the floating control that appears when you move the mouse to
+  the bottom of the screen is new too and this time the video doesn't
+  resize when it shows.
 * Configurable key shortcuts. A shortcut editor has been added, it's 
   located at "Preferences->Mouse & keyboard". Please read 
   Configurable_shortcuts.txt.
@@ -40,26 +44,27 @@ Other additional interesting features:
   system tray. This feature requires Qt 4.2.
 * Added some new functions, like pan&scan, stay on top, set the size 
   of the window...
-* Improved support for subtitles. For instance, now you can load a idx/sub 
-  file and you'll be able to select among all languages that the file 
-  provides. You can have a mkv file with embedded subtitles, load an 
-  idx/sub file (or srt, sub...) and all subtitles will be available.
-* New translations. SMPlayer 0.5.0 is translated (totally or partially) to 
-  the following languages: Bulgarian, Czech, German, Spanish, French, 
-  Hungarian, Italian, Japanese, Georgian, Dutch, Polish, Brazilian Portuguese, 
-  Russian, Slovak, Serbian, Swedish, Turkish, Ukrainian, Simplified-Chinese 
-  and Traditional Chinese. By the way, now it's possible to change the language
-  at run-time.
+* Improved support for subtitles. For instance, now you can load an
+  idx/sub file and you'll be able to select among all languages that
+  the file provides. You can have a mkv file with embedded subtitles,
+  load an idx/sub file (or srt, sub...) and all subtitles will be
+  available.
+* New translations. SMPlayer 0.5.0 is translated (totally or partially)
+  to the following languages: Bulgarian, Czech, German, Spanish,
+  French, Hungarian, Italian, Japanese, Georgian, Dutch, Polish,
+  Brazilian Portuguese, Russian, Slovak, Serbian, Swedish, Turkish,
+  Ukrainian, Simplified-Chinese and Traditional Chinese. By the way,
+  now it's possible to change the language at run-time.
 
 SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 %setup_compile_flags
-%make PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"'
+%make PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"' QMAKE=qmake-qt5 LRELEASE=%{_libdir}/qt5/bin/lrelease
 
 %install
 %makeinstall_std PREFIX=%{_prefix}
@@ -120,6 +125,7 @@ desktop-file-install \
 %lang(ru_RU) %{_datadir}/%{name}/translations/smplayer_ru_RU.qm
 %lang(sk) %{_datadir}/%{name}/translations/smplayer_sk.qm
 %lang(sl) %{_datadir}/%{name}/translations/smplayer_sl_SI.qm
+%lang(sq_AL) %{_datadir}/%{name}/translations/smplayer_sq_AL.qm
 %lang(sr) %{_datadir}/%{name}/translations/smplayer_sr.qm
 %lang(sv) %{_datadir}/%{name}/translations/smplayer_sv.qm
 %lang(th) %{_datadir}/%{name}/translations/smplayer_th.qm
