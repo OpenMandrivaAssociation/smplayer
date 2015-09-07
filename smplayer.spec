@@ -10,6 +10,7 @@ Patch0:		smplayer-0.8.4-optflags.patch
 Patch1:		smplayer-14.9-default-to-mpv.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist-tools
+BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	desktop-file-utils
 Requires:	mpv
 Suggests:	youtube-dl
