@@ -9,7 +9,6 @@ Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		smplayer-0.8.4-optflags.patch
 Patch1:		smplayer-14.9-default-to-mpv.patch
 BuildRequires:	qt4-devel
-BuildRequires:	qt4-linguist-tools
 BuildRequires:	pkgconfig(QtScript)
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	desktop-file-utils
