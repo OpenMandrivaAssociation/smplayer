@@ -64,7 +64,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 
 %build
 %setup_compile_flags
-%make PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"' QMAKE=qmake-qt4 LRELEASE=%{_libdir}/qt4/bin/lrelease
+%make PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"'
 
 %install
 %makeinstall_std PREFIX=%{_prefix}
