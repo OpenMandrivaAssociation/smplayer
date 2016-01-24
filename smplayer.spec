@@ -12,7 +12,7 @@ BuildRequires:	qt4-devel
 BuildRequires:	pkgconfig(QtScript)
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	desktop-file-utils
-Requires:	mpv
+Requires:	mplayer
 Suggests:	youtube-dl
 Suggests:	smplayer-themes
 Obsoletes:	smplayer-qt4 < %{EVRD}
