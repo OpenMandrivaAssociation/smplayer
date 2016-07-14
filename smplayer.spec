@@ -1,13 +1,12 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	16.1.0
+Version:	16.7.0
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		smplayer-0.8.4-optflags.patch
-Patch1:		smplayer-14.9-default-to-mpv.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	pkgconfig(Qt5Script)
@@ -135,6 +134,8 @@ desktop-file-install \
 %lang(uk_UA) %{_datadir}/%{name}/translations/smplayer_uk_UA.qm
 %lang(uz) %{_datadir}/%{name}/translations/smplayer_uz.qm
 %lang(vi) %{_datadir}/%{name}/translations/smplayer_vi_VN.qm
+%lang(am) %{_datadir}/%{name}/translations/smplayer_am.qm
+%lang(fa) %{_datadir}/%{name}/translations/smplayer_fa.qm
 %lang(zh_CN) %{_datadir}/%{name}/translations/smplayer_zh_CN.qm
 %lang(zh_TW) %{_datadir}/%{name}/translations/smplayer_zh_TW.qm
 %lang(ms_MY) %{_datadir}/%{name}/translations/smplayer_ms_MY.qm
