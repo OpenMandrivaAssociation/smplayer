@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	16.7.0
+Version:	16.11.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -97,7 +97,8 @@ desktop-file-install \
 %lang(cs) %{_datadir}/%{name}/translations/smplayer_cs.qm
 %lang(de) %{_datadir}/%{name}/translations/smplayer_de.qm
 %lang(da) %{_datadir}/%{name}/translations/smplayer_da.qm
-%lang(el_GR) %{_datadir}/%{name}/translations/smplayer_el_GR.qm
+%lang(el) %{_datadir}/%{name}/translations/smplayer_el.qm
+%lang(en) %{_datadir}/%{name}/translations/smplayer_en.qm
 %lang(en_GB) %{_datadir}/%{name}/translations/smplayer_en_GB.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
