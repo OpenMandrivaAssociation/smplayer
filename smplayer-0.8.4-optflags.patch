@@ -1,7 +1,6 @@
-diff -urN smplayer-0.8.4/Makefile smplayer-0.8.4-patched/Makefile
---- smplayer-0.8.4/Makefile	2012-11-02 09:42:16.000000000 +1100
-+++ smplayer-0.8.4-patched/Makefile	2013-03-26 15:05:59.445626594 +1100
-@@ -41,7 +41,7 @@
+--- smplayer-17.3.0/Makefile.0000~	2017-03-12 12:25:29.884594560 +0100
++++ smplayer-17.3.0/Makefile	2017-03-12 12:27:09.276435243 +0100
+@@ -25,7 +25,7 @@ all: src/smplayer webserver/simple_web_s
  
  src/smplayer:
  	./get_svn_revision.sh
@@ -9,4 +8,4 @@ diff -urN smplayer-0.8.4/Makefile smplayer-0.8.4-patched/Makefile
 +	+cd src && $(QMAKE) "QMAKE_CFLAGS+=$(CFLAGS)" "QMAKE_CXXFLAGS+=$(CXXFLAGS)" "QMAKE_CXXFLAGS_RELEASE=" "QMAKE_LFLAGS+=$(LDFLAGS)" $(QMAKE_OPTS) && $(DEFS) make
  	cd src && $(LRELEASE) smplayer.pro
  
- clean:
+ webserver/simple_web_server:
