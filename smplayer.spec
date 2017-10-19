@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	17.7.0
+Version:	17.10.2
 Release:	1
 License:	GPLv2+
 Group:		Video
