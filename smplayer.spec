@@ -12,6 +12,7 @@ BuildRequires:	qt5-linguist-tools
 BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	desktop-file-utils
+BuildRequires:	pkgconfig(zlib)
 Requires:	mpv
 Suggests:	youtube-dl
 Suggests:	smplayer-themes
