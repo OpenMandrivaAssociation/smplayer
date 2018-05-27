@@ -81,6 +81,7 @@ desktop-file-install \
 
 %files
 %doc Changelog *.txt
+%doc %{_docdir}/%{name}/
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
