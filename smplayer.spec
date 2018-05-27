@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	18.2.2
+Version:	18.5.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -12,6 +12,7 @@ BuildRequires:	qt5-linguist-tools
 BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	desktop-file-utils
+BuildRequires:	pkgconfig(zlib)
 Requires:	mpv
 Suggests:	youtube-dl
 Suggests:	smplayer-themes
@@ -80,6 +81,7 @@ desktop-file-install \
 
 %files
 %doc Changelog *.txt
+%doc %{_docdir}/%{name}/
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
