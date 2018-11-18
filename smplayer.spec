@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
 Version:	18.10.0
-Release:	2
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
@@ -81,7 +81,6 @@ desktop-file-install \
 
 %files
 %doc Changelog *.txt
-%doc %{_docdir}/%{name}/
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
