@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
 Version:	19.4.9212
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
@@ -9,6 +9,7 @@ Url:		http://smplayer.sourceforge.net
 # https://subversion.assembla.com/svn/smplayer/smplayer/trunk
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.xz
 Patch0:		smplayer-0.8.4-optflags.patch
+Patch1:		smplayer-default-theme.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	pkgconfig(Qt5Script)
@@ -17,7 +18,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(zlib)
 Requires:	mpv
 Suggests:	youtube-dl
-Suggests:	smplayer-themes
+Suggests:	smplayer-theme-Breeze
 Obsoletes:	smplayer-qt4 < %{EVRD}
 Provides:	smplayer-qt5 = %{version}-%{release}
 
@@ -63,8 +64,7 @@ Other additional interesting features:
 SMPlayer supports themes which can be found in smplayer-themes package.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %setup_compile_flags

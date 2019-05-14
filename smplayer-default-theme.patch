@@ -1,0 +1,48 @@
+diff -up smplayer-19.4.9212/src/preferences.cpp.2~ smplayer-19.4.9212/src/preferences.cpp
+--- smplayer-19.4.9212/src/preferences.cpp.2~	2019-01-26 20:51:53.000000000 +0100
++++ smplayer-19.4.9212/src/preferences.cpp	2019-05-14 21:44:11.751806281 +0200
+@@ -128,7 +128,7 @@ void Preferences::reset() {
+ 	subtitle_lang = "";
+ #endif
+ 
+-	use_direct_rendering = false;
++	use_direct_rendering = true;
+ 	use_double_buffer = true;
+ 
+ 	use_soft_video_eq = false;
+@@ -410,12 +410,15 @@ void Preferences::reset() {
+ 	resize_method = Never;
+ 
+ #if STYLE_SWITCHING
++	style = "Breeze";
++#if 0
+ 	#if QT_VERSION >= 0x050000
+ 	style = "Fusion";
+ 	#else
+ 	style="";
+ 	#endif
+ #endif
++#endif
+ 
+ 	center_window = false;
+ 	center_window_if_outside = false;
+@@ -487,7 +490,10 @@ void Preferences::reset() {
+ 	allow_video_movement = false;
+ 
+ 	gui = "DefaultGUI";
+-	iconset = "H2O";
++	if(QFile::exists("/usr/share/smplayer/themes/Breeze/Breeze.rcc"))
++		iconset="Breeze";
++	else
++		iconset = "H2O";
+ 
+ 
+ #if USE_MINIMUMSIZE
+@@ -1261,7 +1267,6 @@ void Preferences::load() {
+ 
+ 	QSettings * set = settings;
+ 
+-
+     /* *******
+        General
+        ******* */
