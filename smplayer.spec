@@ -1,13 +1,13 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	19.4.9212
-Release:	2
+Version:	19.5.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
 # Snapshot releases are taken from svn,
 # https://subversion.assembla.com/svn/smplayer/smplayer/trunk
-Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.xz
+Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		smplayer-0.8.4-optflags.patch
 Patch1:		smplayer-default-theme.patch
 BuildRequires:	qt5-devel
