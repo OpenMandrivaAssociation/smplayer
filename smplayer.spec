@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	19.5.0
+Version:	19.10.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:  pkgconfig(xext)
 Requires:	mpv
 Suggests:	youtube-dl
 Suggests:	smplayer-theme-Breeze
