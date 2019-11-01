@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:  pkgconfig(xext)
 Requires:	mpv
 Suggests:	youtube-dl
 Suggests:	smplayer-theme-Breeze
