@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	19.10.2
+Version:	20.4.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -108,6 +108,7 @@ desktop-file-install \
 %lang(en_GB) %{_datadir}/%{name}/translations/smplayer_en_GB.qm
 %lang(en_US) %{_datadir}/%{name}/translations/smplayer_en_US.qm
 %lang(es) %{_datadir}/%{name}/translations/smplayer_es.qm
+%lang(es_ES) %{_datadir}/%{name}/translations/smplayer_es_ES.qm
 %lang(et) %{_datadir}/%{name}/translations/smplayer_et.qm
 %lang(eu) %{_datadir}/%{name}/translations/smplayer_eu.qm
 %lang(fi) %{_datadir}/%{name}/translations/smplayer_fi.qm
