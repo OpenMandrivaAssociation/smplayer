@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	21.1.0
+Version:	21.8.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -82,8 +82,10 @@ desktop-file-install \
 	--remove-key='Encoding' \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
+%find_lang smplayer --with-qt
+
 %files
-%doc Changelog *.txt
+%doc *.txt
 %doc %{_docdir}/%{name}/
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
@@ -95,6 +97,7 @@ desktop-file-install \
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_iconsdir}/hicolor/*/apps/%{name}.svg
 %{_datadir}/applications/*.desktop
+%{_datadir}/metainfo/smplayer.appdata.xml
 %{_datadir}/%{name}/shortcuts/*
 %lang(ar) %{_datadir}/%{name}/translations/smplayer_ar.qm
 %lang(ar_SY) %{_datadir}/%{name}/translations/smplayer_ar_SY.qm
