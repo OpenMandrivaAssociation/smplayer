@@ -1,6 +1,6 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	21.10.0
+Version:	22.7.0
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -85,8 +85,7 @@ desktop-file-install \
 %find_lang smplayer --with-qt
 
 %files
-%doc *.txt
-%doc %{_docdir}/%{name}/
+%doc %{_docdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/shortcuts
 %dir %{_datadir}/%{name}/translations
