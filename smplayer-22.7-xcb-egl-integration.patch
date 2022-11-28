@@ -1,0 +1,13 @@
+diff -up smplayer-22.7.0/grep.omv~ smplayer-22.7.0/grep
+diff -up smplayer-22.7.0/src/main.cpp.omv~ smplayer-22.7.0/src/main.cpp
+--- smplayer-22.7.0/src/main.cpp.omv~	2022-11-28 19:14:02.743314407 +0100
++++ smplayer-22.7.0/src/main.cpp	2022-11-28 19:14:29.420228854 +0100
+@@ -58,6 +58,7 @@ QString hdpiConfig() {
+ 
+ int main( int argc, char ** argv )
+ {
++	qputenv("QT_XCB_GL_INTEGRATION", "xcb_egl"); // Needs to be done before the QApplication constructor loads the plugins, needed for VA-API to work
+ #ifdef HDPI_SUPPORT
+ 	QString hdpi_config_path = hdpiConfig();
+ 	HDPISupport * hdpi = 0;
+diff -up smplayer-22.7.0/src/myapplication.cpp.omv~ smplayer-22.7.0/src/myapplication.cpp

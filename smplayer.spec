@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
 Version:	22.7.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
@@ -10,6 +10,7 @@ Url:		http://smplayer.sourceforge.net
 Source0:	http://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
 Patch0:		smplayer-0.8.4-optflags.patch
 Patch1:		smplayer-default-theme.patch
+Patch2:		smplayer-22.7-xcb-egl-integration.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	pkgconfig(Qt5Script)
