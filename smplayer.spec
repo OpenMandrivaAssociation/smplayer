@@ -1,7 +1,7 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	22.7.0
-Release:	4
+Version:	23.6.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://smplayer.sourceforge.net
