@@ -9,6 +9,10 @@ Source0:	https://github.com/smplayer-dev/smplayer/releases/download/v%{version}/
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6Widgets)
+BuildRequires:	pkgconfig(Qt6Network)
+BuildRequires:	pkgconfig(Qt6Xml)
+BuildRequires:	pkgconfig(Qt6Core5Compat)
+BuildRequires:	pkgconfig(Qt6Qml)
 BuildRequires:	qmake-qt6
 BuildRequires:	qt6-qttools-linguist-tools
 BuildRequires:	desktop-file-utils
