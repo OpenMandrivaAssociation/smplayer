@@ -1,20 +1,16 @@
 Name:		smplayer
 Summary:	Complete front-end for mplayer written in Qt
-Version:	24.5.0
+Version:	25.6.0
 Release:	1
 License:	GPLv2+
 Group:		Video
-Url:		https://smplayer.sourceforge.net
-# Snapshot releases are taken from svn,
-# https://subversion.assembla.com/svn/smplayer/smplayer/trunk
-Source0:	https://downloads.sourceforge.net/smplayer/%{name}-%{version}.tar.bz2
-Patch0:		smplayer-0.8.4-optflags.patch
-Patch1:		smplayer-default-theme.patch
-Patch2:		smplayer-22.7-xcb-egl-integration.patch
-BuildRequires:	qt5-devel
-BuildRequires:	qt5-linguist-tools
-BuildRequires:	pkgconfig(Qt5Script)
-BuildRequires:	pkgconfig(Qt5Core)
+Url:		https://smplayer.info/
+Source0:	https://github.com/smplayer-dev/smplayer/releases/download/v%{version}/smplayer-%{version}.tar.bz2
+BuildRequires:	pkgconfig(Qt6Core)
+BuildRequires:	pkgconfig(Qt6Gui)
+BuildRequires:	pkgconfig(Qt6Widgets)
+BuildRequires:	qmake-qt6
+BuildRequires:	qt6-qttools-linguist-tools
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:  pkgconfig(xext)
@@ -22,7 +18,21 @@ Requires:	mpv
 Suggests:	youtube-dl
 Suggests:	smplayer-theme-Breeze
 Obsoletes:	smplayer-qt4 < %{EVRD}
-Provides:	smplayer-qt5 = %{version}-%{release}
+Obsoletes:	smplayer-qt5 < %{EVRD}
+
+%patchlist
+smplayer-0.8.4-optflags.patch
+smplayer-default-theme.patch
+smplayer-22.7-xcb-egl-integration.patch
+smplayer-wayland.patch
+# https://github.com/smplayer-dev/smplayer/compare/master...qt6
+https://github.com/smplayer-dev/smplayer/commit/ac672707c2fae6331670b4c82d65ab3e63af5e81.patch
+https://github.com/smplayer-dev/smplayer/commit/c7e8e370b1ef3fde641f6d72050fea945f1b99d1.patch
+https://github.com/smplayer-dev/smplayer/commit/9cd5f731f58aa0cbe2bff408f6923255cce9aafc.patch
+https://github.com/smplayer-dev/smplayer/commit/90778a98be1805369fd637cdd0afa0683d851e56.patch
+https://github.com/smplayer-dev/smplayer/commit/3267ab4d61dc71068f18d5f7c29bf3b67690cc77.patch
+https://github.com/smplayer-dev/smplayer/commit/0e67529ddc48f9b032f9e3849eb7765219d7c1c2.patch
+https://github.com/smplayer-dev/smplayer/commit/1c32b339d484d5926ddb4ddf095f2ec30b7e44ca.patch
 
 %description
 SMPlayer intends to be a complete front-end for MPlayer and MPV,
@@ -70,7 +80,7 @@ SMPlayer supports themes which can be found in smplayer-themes package.
 
 %build
 %setup_compile_flags
-%make_build PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"' QMAKE=qmake-qt5 LRELEASE=%{_libdir}/qt5/bin/lrelease
+%make_build PREFIX=%{_prefix} 'DOC_PATH=\"%{_docdir}/%{name}\"' QMAKE=%{_qtdir}/bin/qmake LRELEASE=%{_qtdir}/bin/lrelease
 
 %install
 %make_install PREFIX=%{_prefix}

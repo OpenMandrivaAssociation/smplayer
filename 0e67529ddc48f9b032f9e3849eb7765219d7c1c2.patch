@@ -1,0 +1,39 @@
+From 0e67529ddc48f9b032f9e3849eb7765219d7c1c2 Mon Sep 17 00:00:00 2001
+From: smplayer-dev <10128951+smplayer-dev@users.noreply.github.com>
+Date: Tue, 2 Sep 2025 14:39:39 +0200
+Subject: [PATCH] Fix GLOBALSHORTCUTS on Linux
+
+---
+ src/globalshortcuts/globalshortcuts_linux.cpp | 4 ++++
+ src/smplayer.pro                              | 2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/globalshortcuts/globalshortcuts_linux.cpp b/src/globalshortcuts/globalshortcuts_linux.cpp
+index 386032a0c..62b948d88 100644
+--- a/src/globalshortcuts/globalshortcuts_linux.cpp
++++ b/src/globalshortcuts/globalshortcuts_linux.cpp
+@@ -52,7 +52,11 @@ class X11Data {
+ };
+ 
+ 
++#if QT_VERSION_MAJOR < 6
+ bool GlobalShortcuts::nativeEventFilter(const QByteArray & eventType, void * message, long * /*result*/) {
++#else
++bool GlobalShortcuts::nativeEventFilter(const QByteArray & eventType, void * message, qintptr * /*result*/) {
++#endif
+ 	//qDebug() << "GlobalShortcuts::nativeEventFilter";
+ 
+ 	if (!isEnabled()) return false;
+diff --git a/src/smplayer.pro b/src/smplayer.pro
+index 29c481063..fce8553b0 100644
+--- a/src/smplayer.pro
++++ b/src/smplayer.pro
+@@ -31,7 +31,7 @@ DEFINES += AUTO_SHUTDOWN_PC
+ #DEFINES += CAPTURE_STREAM
+ DEFINES += BOOKMARKS
+ DEFINES += MOUSE_GESTURES
+-#DEFINES += GLOBALSHORTCUTS
++DEFINES += GLOBALSHORTCUTS
+ DEFINES += ADD_BLACKBORDERS_FS
+ DEFINES += INITIAL_BLACKBORDERS
+ DEFINES += CHROMECAST_SUPPORT

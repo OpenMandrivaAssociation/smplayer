@@ -1,0 +1,22 @@
+From c7e8e370b1ef3fde641f6d72050fea945f1b99d1 Mon Sep 17 00:00:00 2001
+From: smplayer-dev <10128951+smplayer-dev@users.noreply.github.com>
+Date: Mon, 1 Sep 2025 12:41:07 +0200
+Subject: [PATCH] Disable GLOBALSHORTCUTS, it fails to compile
+
+---
+ src/smplayer.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/smplayer.pro b/src/smplayer.pro
+index 2d24ba425..b25a73595 100644
+--- a/src/smplayer.pro
++++ b/src/smplayer.pro
+@@ -31,7 +31,7 @@ DEFINES += AUTO_SHUTDOWN_PC
+ #DEFINES += CAPTURE_STREAM
+ DEFINES += BOOKMARKS
+ DEFINES += MOUSE_GESTURES
+-DEFINES += GLOBALSHORTCUTS
++#DEFINES += GLOBALSHORTCUTS
+ DEFINES += ADD_BLACKBORDERS_FS
+ DEFINES += INITIAL_BLACKBORDERS
+ DEFINES += CHROMECAST_SUPPORT

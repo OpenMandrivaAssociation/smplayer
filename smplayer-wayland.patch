@@ -1,0 +1,14 @@
+diff -up smplayer-25.6.0/src/core.cpp.omv~ smplayer-25.6.0/src/core.cpp
+--- smplayer-25.6.0/src/core.cpp.omv~	2025-10-04 18:05:03.766968219 +0200
++++ smplayer-25.6.0/src/core.cpp	2025-10-04 18:06:05.001047922 +0200
+@@ -1754,7 +1754,9 @@ void Core::startMplayer( QString file, d
+ 		#endif // Q_OS_MACX
+ 	}
+ 
+-#ifdef OS_UNIX_NOT_MAC
++// This doesn't really work -- wayland doesn't provide an x11egl context, causing
++// the playback to fail ([vo/gpu/x11] X11 error: BadDrawable (invalid Pixmap or Window parameter))
++#if 0 //def OS_UNIX_NOT_MAC
+ 	// If using Wayland
+ 	if (qgetenv("XDG_SESSION_TYPE") != "x11") {
+ 		// Trying to prevent the video to be outside the application window

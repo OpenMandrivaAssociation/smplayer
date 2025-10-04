@@ -1,0 +1,29 @@
+From 1c32b339d484d5926ddb4ddf095f2ec30b7e44ca Mon Sep 17 00:00:00 2001
+From: smplayer-dev <10128951+smplayer-dev@users.noreply.github.com>
+Date: Wed, 3 Sep 2025 14:53:13 +0200
+Subject: [PATCH] Try to fix an error
+
+---
+ src/playlist.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/playlist.cpp b/src/playlist.cpp
+index 6f59828e8..754542a54 100644
+--- a/src/playlist.cpp
++++ b/src/playlist.cpp
+@@ -1195,13 +1195,13 @@ void Playlist::loadXSPF(const QString & filename) {
+ 	}
+ 
+ 	QDomDocument dom_document;
+-#if QT_VERSION_MAJOR < 6
++#if QT_VERSION < QT_VERSION_CHECK(6, 5, 0)
+     bool ok = dom_document.setContent(f.readAll());
+     qDebug() << "Playlist::loadXSPF: success:" << ok;
+     if (!ok) return;
+ #else
+     auto ok = dom_document.setContent(f.readAll());
+-    qDebug() << "Playlist::loadXSPF: success:" << ok;
++    qDebug() << "Playlist::loadXSPF: success:" << ok.errorMessage;
+     if (!ok) return;
+ #endif
+ 

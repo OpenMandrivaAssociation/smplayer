@@ -1,0 +1,155 @@
+From 9cd5f731f58aa0cbe2bff408f6923255cce9aafc Mon Sep 17 00:00:00 2001
+From: smplayer-dev <10128951+smplayer-dev@users.noreply.github.com>
+Date: Mon, 1 Sep 2025 12:42:47 +0200
+Subject: [PATCH] Fix slider connections for Qt 6.2
+
+---
+ src/eqslider.cpp      | 2 ++
+ src/eqslider.ui       | 4 ----
+ src/playlist.cpp      | 2 +-
+ src/prefadvanced.cpp  | 2 ++
+ src/prefadvanced.ui   | 4 ----
+ src/prefinterface.cpp | 4 ++++
+ src/prefinterface.ui  | 8 --------
+ src/prefsubtitles.cpp | 2 ++
+ src/prefsubtitles.ui  | 4 ----
+ 9 files changed, 11 insertions(+), 21 deletions(-)
+
+diff --git a/src/eqslider.cpp b/src/eqslider.cpp
+index d05823ea0..d7653c707 100644
+--- a/src/eqslider.cpp
++++ b/src/eqslider.cpp
+@@ -27,6 +27,8 @@ EqSlider::EqSlider( QWidget* parent, Qt::WindowFlags f)
+ 	: QWidget(parent, f)
+ {
+ 	setupUi(this);
++	connect(_slider, SIGNAL(valueChanged(int)),
++            value_label, SLOT(setNum(int)));
+ 
+ 	_icon->setText( QString() );
+ 	_slider->setFocusPolicy( Qt::StrongFocus );
+diff --git a/src/eqslider.ui b/src/eqslider.ui
+index 54741bf6a..a3bee67d4 100644
+--- a/src/eqslider.ui
++++ b/src/eqslider.ui
+@@ -104,10 +104,6 @@
+  <resources/>
+  <connections>
+   <connection>
+-   <sender>_slider</sender>
+-   <signal>valueChanged(int)</signal>
+-   <receiver>value_label</receiver>
+-   <slot>setNum(int)</slot>
+    <hints>
+     <hint type="sourcelabel" >
+      <x>64</x>
+diff --git a/src/playlist.cpp b/src/playlist.cpp
+index ec07a40fc..6f59828e8 100644
+--- a/src/playlist.cpp
++++ b/src/playlist.cpp
+@@ -1201,7 +1201,7 @@ void Playlist::loadXSPF(const QString & filename) {
+     if (!ok) return;
+ #else
+     auto ok = dom_document.setContent(f.readAll());
+-    qDebug() << "Playlist::loadXSPF: success:" << ok.errorMessage;
++    qDebug() << "Playlist::loadXSPF: success:" << ok;
+     if (!ok) return;
+ #endif
+ 
+diff --git a/src/prefadvanced.cpp b/src/prefadvanced.cpp
+index a51e0f58a..858a44ea3 100644
+--- a/src/prefadvanced.cpp
++++ b/src/prefadvanced.cpp
+@@ -30,6 +30,8 @@ PrefAdvanced::PrefAdvanced(QWidget * parent, Qt::WindowFlags f)
+ 	: PrefWidget(parent, f )
+ {
+ 	setupUi(this);
++	connect(osd_pos_slider, SIGNAL(valueChanged(int)),
++            osd_pos_label, SLOT(setNum(int)));
+ 
+ #ifndef Q_OS_WIN
+ 	shortnames_check->hide();
+diff --git a/src/prefadvanced.ui b/src/prefadvanced.ui
+index 74846d7ef..e303ff395 100644
+--- a/src/prefadvanced.ui
++++ b/src/prefadvanced.ui
+@@ -876,10 +876,6 @@
+    </hints>
+   </connection>
+   <connection>
+-   <sender>osd_pos_slider</sender>
+-   <signal>valueChanged(int)</signal>
+-   <receiver>osd_pos_label</receiver>
+-   <slot>setNum(int)</slot>
+    <hints>
+     <hint type="sourcelabel">
+      <x>305</x>
+diff --git a/src/prefinterface.cpp b/src/prefinterface.cpp
+index 5131ee871..ae33a0c2f 100644
+--- a/src/prefinterface.cpp
++++ b/src/prefinterface.cpp
+@@ -49,6 +49,10 @@ PrefInterface::PrefInterface(QWidget * parent, Qt::WindowFlags f)
+ 	: PrefWidget(parent, f )
+ {
+ 	setupUi(this);
++	connect(floating_width_slider, SIGNAL(valueChanged(int)),
++            floating_width_label, SLOT(setNum(int)));
++	connect(floating_margin_slider, SIGNAL(valueChanged(int)),
++            floating_margin_label, SLOT(setNum(int)));
+ 	/* volume_icon->hide(); */
+ 
+ 	// Style combo
+diff --git a/src/prefinterface.ui b/src/prefinterface.ui
+index 99016b82c..38dc11b31 100644
+--- a/src/prefinterface.ui
++++ b/src/prefinterface.ui
+@@ -1125,10 +1125,6 @@
+  <resources/>
+  <connections>
+   <connection>
+-   <sender>floating_width_slider</sender>
+-   <signal>valueChanged(int)</signal>
+-   <receiver>floating_width_label</receiver>
+-   <slot>setNum(int)</slot>
+    <hints>
+     <hint type="sourcelabel">
+      <x>282</x>
+@@ -1141,10 +1137,6 @@
+    </hints>
+   </connection>
+   <connection>
+-   <sender>floating_margin_slider</sender>
+-   <signal>valueChanged(int)</signal>
+-   <receiver>floating_margin_label</receiver>
+-   <slot>setNum(int)</slot>
+    <hints>
+     <hint type="sourcelabel">
+      <x>332</x>
+diff --git a/src/prefsubtitles.cpp b/src/prefsubtitles.cpp
+index 7b357bb19..1171ab421 100644
+--- a/src/prefsubtitles.cpp
++++ b/src/prefsubtitles.cpp
+@@ -32,6 +32,8 @@ PrefSubtitles::PrefSubtitles(QWidget * parent, Qt::WindowFlags f)
+ 	: PrefWidget(parent, f )
+ {
+ 	setupUi(this);
++	connect(opacity_slider, SIGNAL(valueChanged(int)),
++            opacity_num, SLOT(setNum(int)));
+ 
+ 	ass_subs->setEnabled(false);
+ 
+diff --git a/src/prefsubtitles.ui b/src/prefsubtitles.ui
+index ce29ce4be..986a5f457 100644
+--- a/src/prefsubtitles.ui
++++ b/src/prefsubtitles.ui
+@@ -926,10 +926,6 @@
+    </hints>
+   </connection>
+   <connection>
+-   <sender>opacity_slider</sender>
+-   <signal>valueChanged(int)</signal>
+-   <receiver>opacity_num</receiver>
+-   <slot>setNum(int)</slot>
+    <hints>
+     <hint type="sourcelabel">
+      <x>275</x>
